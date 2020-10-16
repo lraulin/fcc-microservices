@@ -19,15 +19,15 @@ app.get("/api/hello", (req, res) => {
   res.json({ greeting: "hello API" });
 });
 
-app.get("/api/timestamp/:date", (req, res) => {
+const output = (date = new Date()) => ({
+  unix: date.getTime(),
+  utc: date.toUTCString(),
+});
+
+app.get("/api/timestamp/:date?", (req, res) => {
   const { date } = req.params;
 
-  const output = (date = new Date()) => ({
-    unix: date.getTime(),
-    utc: date.toUTCString(),
-  });
-
-  if (date === "") {
+  if (!date) {
     return res.json(output());
   }
 
