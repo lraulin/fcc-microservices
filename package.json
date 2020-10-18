@@ -7,8 +7,11 @@
     "start": "nodemon server.mjs"
   },
   "dependencies": {
+    "@supercharge/request-ip": "^1.1.2",
     "cors": "^2.8.0",
-    "express": "^4.12.4"
+    "express": "^4.12.4",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.9"
   },
   "engines": {
     "node": "4.4.5"
